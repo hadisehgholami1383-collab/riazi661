@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>ماموریت یخ و آتش</title><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet"><style>
+:root{color-scheme:dark;--y:#ffd23f;--g:#3ddc84;--r:#ff4f6d;--c:#ff8a3d;--ink:#fff}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background-color:#0d3f6e}
+body{min-height:100vh;color:var(--ink);font:17px/1.8 Vazirmatn,Tahoma,"Segoe UI",sans-serif;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 20px);
+background:radial-gradient(circle at 85% 4%,#fff3b0cc 0,#ffb84d88 9%,transparent 28%),radial-gradient(circle at 10% 98%,#9fe8ffaa,transparent 38%),linear-gradient(180deg,#ff9a3c 0%,#f2605c 20%,#8a3d9a 42%,#25589f 65%,#0d3f6e 100%);background-attachment:fixed;overflow-x:hidden}
+body.pad{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 100px)}
+.sn{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.sn b{position:absolute;top:-20px;color:#fff;opacity:.8;animation:fall linear infinite;font-weight:400}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.fx i{position:fixed;font-style:normal;opacity:.4;font-size:2.4rem;animation:dr 12s ease-in-out infinite;pointer-events:none;z-index:0}
+.fx i:nth-child(1){top:8%;left:5%}.fx i:nth-child(2){top:20%;right:6%;animation-delay:-3s}.fx i:nth-child(3){top:62%;left:7%;animation-delay:-6s}.fx i:nth-child(4){top:80%;right:9%;animation-delay:-9s}.fx i:nth-child(5){top:45%;left:48%;animation-delay:-4s}
+@keyframes dr{50%{transform:translate(18px,-26px) rotate(14deg)}}
+.dsg{position:relative;z-index:2;text-align:center;font-weight:900;padding:8px 10px;padding-top:calc(8px + env(safe-area-inset-top,0px));background:linear-gradient(90deg,#ff4f6d,#ffb800,#46d1ff);color:#1b1040;border-bottom:4px solid #fff;box-shadow:0 5px 0 #0004}
+#app{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:10px 14px 20px}
+.hud{display:flex;justify-content:space-between;align-items:center;margin:6px 0 8px;gap:8px}
+.pill{background:#0a1230cc;border:3px solid var(--y);border-radius:999px;padding:0 14px;font-weight:900;color:var(--y);box-shadow:0 4px 0 #0006;font-size:.95rem;white-space:nowrap}
+.cdp{direction:ltr;border-color:#46d1ff;color:#bff1ff}
+.ib{background:#ffffff30;border:3px solid #fff7;border-radius:50%;width:44px;height:44px;font-size:1.3rem;cursor:pointer;color:#fff;box-shadow:0 4px 0 #0005}
+.thermo{height:22px;border-radius:14px;background:#0a1230cc;border:3px solid #fff8;overflow:hidden;position:relative;margin:2px 0 10px;direction:ltr}
+.thermo i{display:block;height:100%;background:linear-gradient(90deg,#46d1ff,#ffffff 45%,#ffb347,#ff4f6d);transition:width .8s;border-radius:10px}
+.thermo em{position:absolute;inset:0;text-align:center;font-style:normal;font-size:.7rem;font-weight:900;line-height:16px;text-shadow:0 1px 2px #000}
+.card{background:linear-gradient(160deg,#142257ee,#0b1236ee);border:4px solid var(--c);border-radius:32px;padding:18px 16px;box-shadow:0 10px 0 #0006,0 0 30px #0007;text-align:center;animation:pop .5s cubic-bezier(.2,1.5,.4,1);backdrop-filter:blur(3px)}
+@keyframes pop{from{transform:scale(.88);opacity:0}}@keyframes slide{from{transform:translateX(-40px);opacity:0}}
+h1{margin:4px 0;font-size:2.3rem;font-weight:900;line-height:1.3;background:linear-gradient(90deg,#ffb347,#ff4f6d,#ffffff,#46d1ff,#ffb347);background-size:250%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 5s linear infinite;cursor:pointer;filter:drop-shadow(0 3px 0 #0007)}
+@keyframes sh{to{background-position:250%}}
+h2{margin:6px 0;font-weight:900}
+.mas{font-size:4.4rem;line-height:1.1;display:inline-block;animation:fl 2.6s ease-in-out infinite;filter:drop-shadow(0 8px 0 #0004)}
+@keyframes fl{50%{transform:translateY(-12px) rotate(-6deg)}}
+.bub{position:relative;background:#fff;color:#16296b;border-radius:22px;padding:6px 14px;margin:12px auto 6px;max-width:94%;font-weight:700;font-size:.98rem}
+.bub:before{content:"";position:absolute;top:-10px;right:50%;margin-right:-10px;border:10px solid transparent;border-top:0;border-bottom-color:#fff}
+input,textarea{width:100%;font:inherit;border:4px solid var(--y);border-radius:20px;padding:6px 12px;background:#0a1230;color:#fff;text-align:center;margin:8px 0;outline:0}textarea{text-align:left;direction:ltr;font-size:.8rem;border-color:#46d1ff}
+input[type=checkbox]{width:26px;height:26px;margin:0 0 0 8px;vertical-align:middle;accent-color:#ffd23f}
+button{font:inherit;cursor:pointer}
+.go,.sec{display:block;width:100%;border:0;border-radius:22px;padding:8px;font-weight:900;margin:10px 0;color:#16296b}
+.go{background:linear-gradient(180deg,#ffe36b,#ffb000);box-shadow:0 7px 0 #b97d00;font-size:1.25rem}
+.go.pulse{animation:bn 1.6s ease-in-out infinite}@keyframes bn{50%{transform:scale(1.04)}}
+.sec{background:#e5f3ff;box-shadow:0 5px 0 #6f93b8}.go:active,.sec:active{transform:translateY(5px);box-shadow:none;animation:none}
+.go:disabled,.sec:disabled{background:#6b7390;color:#c9cfe6;box-shadow:0 5px 0 #3b415c;cursor:not-allowed;animation:none}
+.sm{font-size:.88rem;opacity:.92}.bad{color:#ffb3c6;font-weight:900}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}.chips span{background:#0007;border:2px solid #ffffff55;border-radius:999px;padding:0 12px;font-size:.85rem;font-weight:700}
+.cons{display:block;background:#ffffff1c;border:3px solid var(--y);border-radius:20px;padding:8px 12px;margin:10px 0;text-align:right;font-weight:700;font-size:.92rem;cursor:pointer}
+.tb{display:block;margin:14px auto 0;background:#ffffff26;border:3px dashed #ffffff99;color:#fff;border-radius:999px;padding:2px 22px;font-weight:900;box-shadow:0 4px 0 #0005}
+.stages{display:flex;flex-direction:column;gap:14px;margin:14px 0}
+.pl{display:flex;align-items:center;gap:12px;text-align:right;border:4px solid var(--c);background:linear-gradient(135deg,#0a1230,#1d2b6b);color:#fff;border-radius:999px 28px 28px 999px;padding:6px 8px;box-shadow:0 7px 0 #0008;width:90%;transition:transform .15s}
+.pl:nth-child(even){align-self:flex-end;border-radius:28px 999px 999px 28px;flex-direction:row-reverse;text-align:left}
+.pl .em{flex:0 0 74px;height:74px;border-radius:50%;display:grid;place-items:center;font-size:2.6rem;background:radial-gradient(circle at 35% 30%,#fff7,var(--c) 65%);box-shadow:0 0 18px var(--c);animation:fl 3s ease-in-out infinite}
+.pl .tx{flex:1;display:flex;flex-direction:column;line-height:1.5}.pl b{font-size:1.1rem}.pl small{opacity:.9}.pl i{font-style:normal;font-weight:900;color:var(--c);font-size:.95rem}
+.pl:not(:disabled){animation:gl 2.4s ease-in-out infinite}@keyframes gl{50%{box-shadow:0 7px 0 #0008,0 0 24px var(--c)}}
+.pl.done{background:linear-gradient(135deg,#0f4a29,#1b7a43);animation:none}.pl.locked{opacity:.55;filter:grayscale(.9);animation:none}.pl:disabled{cursor:not-allowed}
+.lesson{background:#ffffff16;border:3px dashed var(--c);border-radius:24px;padding:12px;margin:10px 0;animation:slide .4s;text-align:right}
+.lesson h3{margin:0 0 4px;color:var(--c);font-weight:900;font-size:1.2rem;text-align:center}.lesson p{margin:6px 0;font-size:1rem}
+.fact{background:linear-gradient(90deg,#ff8a3d33,#46d1ff33);border-radius:16px;padding:4px 12px;font-size:.9rem;font-weight:700}
+.row{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap;direction:ltr;margin:10px 0}
+.bx{display:inline-grid;place-items:center;min-width:44px;height:44px;padding:0 6px;border-radius:14px;background:var(--c);color:#16296b;font-weight:900;font-size:1.15rem;box-shadow:0 4px 0 #0006;animation:pop .5s backwards}
+.bx.s{min-width:34px;height:38px;padding:0 3px;font-size:.95rem;border-radius:10px}
+.bx.cold{background:linear-gradient(180deg,#bff1ff,#46b8ff)}.bx.hot{background:linear-gradient(180deg,#ffd98a,#ff8a3d)}.bx.zero{background:#fff}
+.bx.q{background:#fff;color:#16296b;animation:bn 1s infinite}.bx.g{background:var(--g)}
+.ar{font-size:.8rem;font-weight:900;color:var(--y);min-width:30px;text-align:center}
+.pgs{display:flex;gap:8px;justify-content:center;margin:8px 0}.pgs u{width:14px;height:14px;border-radius:50%;background:#ffffff33;border:2px solid #fff7}.pgs u.on{background:var(--y)}
+.qt{display:flex;justify-content:space-between;align-items:center;font-weight:900}.qt span:first-child{background:var(--c);border-radius:999px;padding:0 14px;color:#16296b;font-size:.92rem}
+.hearts{font-size:1.5rem;letter-spacing:2px}.hearts.hit{animation:sk .5s}@keyframes sk{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.bar{height:20px;background:#0a1230;border-radius:12px;overflow:hidden;margin:10px 0 4px;border:3px solid #fff7}.bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#46d1ff,#ffd23f,#ff4f6d);transition:width .2s linear;direction:ltr}
+.dots{display:flex;gap:8px;justify-content:center;margin:6px 0}.dots u{width:16px;height:16px;border-radius:50%;background:#ffffff33;border:2px solid #fff7}.dots u.on{background:var(--g);border-color:#fff}.dots u.cur{background:var(--y);border-color:#fff;animation:bn 1s infinite}
+.tm{display:inline-block;background:#0009;border-radius:999px;padding:0 12px;margin-inline-start:8px;color:var(--y);font-weight:900}.tm.hot{background:var(--r);color:#fff;animation:bn .5s infinite}
+.q{font-size:1.28rem;margin:12px 0;font-weight:900;background:#ffffff1a;border-radius:22px;padding:10px 12px;line-height:2}
+.ops{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.op{border:0;border-radius:24px;padding:14px 4px;font-size:1.45rem;font-weight:900;color:#fff;box-shadow:0 7px 0 #0008;position:relative;animation:pop .5s backwards}
+.op:nth-child(2){animation-delay:.07s}.op:nth-child(3){animation-delay:.14s}.op:nth-child(4){animation-delay:.21s}
+.op:before{content:attr(data-s);position:absolute;top:2px;right:10px;font-size:.85rem;opacity:.75}
+.o0{background:linear-gradient(180deg,#4d8bff,#2f5bea)}.o1{background:linear-gradient(180deg,#ff9a3d,#e8731a)}.o2{background:linear-gradient(180deg,#1fcfc9,#0a9a96)}.o3{background:linear-gradient(180deg,#ff6aa6,#c93a74)}
+.op:active{transform:translateY(6px);box-shadow:none}.op.right{background:linear-gradient(180deg,#46e08d,#1e8f52);animation:pu .6s}.op.wrong{background:#555;opacity:.75;animation:sk .4s}@keyframes pu{50%{transform:scale(1.1)}}
+.ops.tf .op{font-size:1.5rem;padding:20px 4px}
+#fb{margin-top:14px;font-weight:900;font-size:1.1rem}#fb.ok{color:var(--g)}#fb.bad{color:#ffb3c6}
+.why{background:#fff;color:#16296b;border-radius:20px;padding:8px 14px;margin:10px 0;font-weight:700;font-size:.98rem;text-align:right;animation:pop .4s}
+.say{position:fixed;left:50%;top:38%;transform:translate(-50%,-50%);z-index:30;font-size:2.6rem;font-weight:900;color:#fff;text-shadow:0 4px 0 #0008,0 0 24px #ffb347;pointer-events:none;animation:sayup 1.6s ease-out forwards;white-space:nowrap}
+@keyframes sayup{0%{transform:translate(-50%,-30%) scale(.5);opacity:0}20%{transform:translate(-50%,-50%) scale(1.15);opacity:1}100%{transform:translate(-50%,-110%) scale(1);opacity:0}}
+.cf{position:fixed;top:60vh;font-size:2rem;pointer-events:none;animation:up 1.8s ease-out forwards;z-index:9}@keyframes up{to{transform:translateY(-65vh) rotate(90deg);opacity:0}}
+.pts{display:inline-block;background:#0a1230cc;border:3px solid var(--y);color:var(--y);font-weight:900;border-radius:999px;padding:0 18px;font-size:1.2rem;margin:4px 0}
+.medal{font-size:3.4rem;animation:fl 2s infinite}
+.cert{border:3px double var(--y);border-radius:22px;padding:6px 10px;margin:10px 0;background:#ffffff14}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;display:flex;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,#0a123000,#0a1230f2 30%);max-width:640px;margin:0 auto}
+.dock .go{margin:0;flex:1;font-size:1.05rem;padding:10px 4px}.dock .cp{background:linear-gradient(180deg,#b8f5d0,#3ddc84);box-shadow:0 7px 0 #1e8f52}
+#cam{position:fixed;left:10px;bottom:90px;z-index:20;width:92px;border-radius:14px;overflow:hidden;border:3px solid var(--r);box-shadow:0 4px 0 #0008;background:#000}
+#cam video{display:block;width:100%;height:70px;object-fit:cover;transform:scaleX(-1)}#cam span{position:absolute;top:3px;right:5px;font-size:.62rem;font-weight:900;color:#fff;background:#e0194f;border-radius:8px;padding:0 6px;animation:bn 1s infinite}
+.modal{position:fixed;inset:0;z-index:50;background:#000b;display:grid;place-items:center;padding:16px}.modal .card{max-width:520px;width:100%}
+/* teacher */
+.th{background:linear-gradient(135deg,#ff8a3d,#ff4f6d 45%,#46b8ff);border-radius:26px;padding:10px;color:#16296b;font-weight:900;margin-bottom:10px;box-shadow:0 6px 0 #0006}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}.stats div{background:#0a1230;border:2px solid #46d1ff;border-radius:16px;padding:4px 2px;font-size:.78rem}.stats b{display:block;font-size:1.4rem;color:var(--y)}
+.box{background:#ffffff14;border:2px solid #ffffff44;border-radius:20px;padding:10px;margin:12px 0;text-align:right}.box h3{margin:0 0 4px;font-weight:900}
+.lb{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:#0a1230;border-radius:16px;padding:6px 10px;margin:6px 0;border-right:6px solid var(--c);text-align:right}
+.lb .nm{flex:1;min-width:150px;font-weight:900}.lb .sc{font-weight:900;color:var(--y);font-size:1.2rem}.lb small{display:block;opacity:.8;font-weight:400}
+.mini{display:flex;gap:3px;direction:ltr;width:100%;justify-content:center;order:5;flex-wrap:wrap}.mini u{width:12px;height:12px;border-radius:3px;background:#ffffff33}.mini u.ok{background:var(--g)}.mini u.no{background:var(--r)}
+.qb{display:flex;align-items:center;gap:6px;margin:3px 0;font-size:.8rem;direction:ltr}.qb span{width:28px}.qb i{display:block;height:10px;border-radius:6px;background:linear-gradient(90deg,#ff4f6d,#ffd23f,#3ddc84)}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.85rem}th,td{border:1px solid #46d1ff66;padding:2px 6px}th{background:#2f5bea}
+</style></head><body><div class=sn id=sn></div><div class=fx><i>☀️</i><i>❄️</i><i>🔥</i><i>🧊</i><i>🌡️</i></div><div class=dsg>🎨 طراح: اکبر اللهوردی 🎨</div><div id="app"></div><div id=ex></div><button class=tb id=tbt onclick="gotoT()">👩‍🏫 ورود معلم</button><script>
+const SECRET="mp-integers6-akbar-q3Z",TPH="8f8040207531d5d01f38b932a1b9db5e90e49fc80ad4faa289553c98eb2e91b8",DL0=1792179164971,TL=60,LIVES=3,NQ=5,CAM=true;
+const $=s=>document.querySelector(s),fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]),pick=a=>a[Math.floor(Math.random()*a.length)];
+const num=x=>(x[0]==='-'?'−':'')+fa(x.replace('-',''));
+/* ---------- content ---------- */
+const nl=(a,b,cl)=>{let o='<div class=row>';for(let i=a;i<=b;i++)o+=`<b class="bx s ${i<0?'cold':i>0?'hot':'zero'}">${i<0?'−':''}${fa(Math.abs(i))}</b>`;return o+'</div>'};
+const ch=(a,op,cl)=>`<div class=row>${a.map((x,i)=>(i?`<span class=ar>${op||''}</span>`:'')+`<b class="bx ${cl||''}">${x}</b>`).join('')}</div>`;
+const T=[
+["🌡️","عدد صحیح و دماسنج","#46d1ff",[
+`<h3>🌡️ دماسنج؛ دوست عددهای منفی</h3><p>بالای صفر <b>مثبت</b> است (گرم 🔥) و زیر صفر <b>منفی</b> است (سرد ❄️).</p>${nl(-5,5)}<p>مثلاً هوای ۵ درجه زیر صفر را با [-5] می‌نویسیم.</p>`,
+`<h3>🔢 عدد صحیح یعنی چه؟</h3><p>عددهای صحیح شامل <b>مثبت‌ها</b>، <b>صفر</b> و <b>منفی‌ها</b> هستند. کسر و اعشار، صحیح نیستند.</p>${ch(['−۲','−۱','۰','۱','۲'],'،','g')}<p>صفر نه مثبت است نه منفی. هر عدد طبیعی هم یک عدد صحیح مثبت است.</p><p class=fact>❄️ می‌دانستی؟ سردترین دمای ثبت‌شده روی زمین حدود [-89] درجه‌ی سانتی‌گراد (در قطب جنوب) بوده!</p>`],
+[["هوای یک شهر در زمستان ۵ درجه زیر صفر است. با عدد صحیح آن را چه می‌نویسیم؟",["[5]","[-5]","[0]","[-50]"],1,"«زیر صفر» یعنی منفی؛ پس دما برابر [-5] است."],
+["کدام گزینه عدد صحیح نیست؟",["[-3]","[0]","۲٫۵","[7]"],2,"۲٫۵ اعشاری است. عدد صحیح فقط شامل مثبت، صفر و منفی‌های بدون اعشار و کسر است."],
+["یک غواص ۸ متر زیر سطح دریاست. جایگاه او با کدام عدد نشان داده می‌شود؟",["[8]","[0]","[-8]","[80]"],2,"سطح دریا صفر است و زیر آن منفی؛ پس [-8]."],
+["«عدد صفر نه مثبت است و نه منفی.»",["صحیح","غلط"],0,"صفر مرز میان عددهای مثبت و منفی است."],
+["«هر عدد طبیعی یک عدد صحیح (مثبت) هم هست.»",["صحیح","غلط"],0,"عددهای طبیعی ۱، ۲، ۳، … همان صحیح‌های مثبت‌اند."]]],
+["🧭","محور و قرینه","#ff8a3d",[
+`<h3>↔️ محور اعداد</h3><p>روی محور، عددهای مثبت <b>سمت راستِ صفر</b> و عددهای منفی <b>سمت چپ</b> هستند.</p>${nl(-6,6)}<p>هرچه به راست برویم عدد بزرگ‌تر می‌شود.</p>`,
+`<h3>🪞 قرینه</h3><p>قرینه‌ی هر عدد، عددی است که از صفر به همان اندازه فاصله دارد، ولی در سمت مخالف.</p>${ch(['−۳','۰','۳'],'↔','g')}<p>قرینه‌ی [3] برابر [-3] است و قرینه‌ی [-9] برابر [9]. قرینه‌ی صفر، خودِ صفر است!</p>`],
+[["روی محور اعداد، عدد [-2] در کدام سمتِ صفر قرار دارد؟",["چپ","راست","روی صفر","بالا"],0,"عددهای منفی سمت چپ صفر هستند."],
+["قرینه‌ی عدد [5] کدام است؟",["[5]","[0]","[-5]","[10]"],2,"قرینه‌ی [5] هم‌فاصله از صفر و سمت مخالف است: [-5]."],
+["قرینه‌ی عدد [-9] کدام است؟",["[9]","[-9]","[0]","[-18]"],0,"قرینه‌ی یک منفی، مثبتِ همان عدد است: [9]."],
+["فاصله‌ی عدد [-4] تا صفر روی محور چند واحد است؟",["۴","[-4]","۰","۸"],0,"فاصله همیشه مثبت است؛ ۴ قدم تا صفر."],
+["کدام عدد با قرینه‌ی خودش برابر است؟",["[1]","[-1]","[0]","[10]"],2,"تنها [0] قرینه‌ی خودش است."]]],
+["⚖️","مقایسه و ترتیب","#ff4f6d",[
+`<h3>⚖️ کدام بزرگ‌تر است؟</h3><p>هر عددی که سمت راست‌تر باشد، بزرگ‌تر است. پس <b>هر عدد مثبت از هر عدد منفی بزرگ‌تر</b> است.</p>${nl(-4,4)}<p>[3] > [-5] و [0] > [-1]</p>`,
+`<h3>🧊 بین منفی‌ها چه؟</h3><p>بین دو عدد منفی، هرکدام از صفر <b>دورتر</b> باشد، <b>کوچک‌تر</b> است (سردتر!).</p><p style="text-align:center;direction:ltr;font-size:1.3rem;font-weight:900">−۹ &lt; −۲</p><p>دمای [-9] از [-2] سردتر است.</p><p class=fact>🌊 می‌دانستی؟ عمیق‌ترین نقطه‌ی اقیانوس‌ها (ترانشه‌ی ماریانا) حدود ۱۱ کیلومتر زیر سطح دریاست؛ یعنی حدود [-11000] متر!</p>`],
+[["کدام عدد از همه کوچک‌تر است؟",["[3]","[0]","[-2]","[-7]"],3,"از بین منفی‌ها آن که از صفر دورتر است کوچک‌تر است؛ [-7]."],
+["کدام مقایسه درست است؟",["§[-3] < [-5]","§[-3] > [-5]","§[0] < [-1]","§[2] < [-8]"],1,"[-3] سمت راست‌تر از [-5] است، پس [-3] > [-5]."],
+["عددهای [3]، [-1]، [-6] و [0] را از کوچک به بزرگ مرتب کنید.",["§[-6] , [-1] , [0] , [3]","§[3] , [0] , [-1] , [-6]","§[-1] , [-6] , [0] , [3]","§[0] , [-1] , [3] , [-6]"],0,"از چپ به راست روی محور: [-6]، [-1]، [0]، [3]."],
+["دمای شهر «الف» [-4] و شهر «ب» [-9] درجه است. کدام شهر سردتر است؟",["الف","هر دو برابرند","ب","نمی‌توان گفت"],2,"[-9] از [-4] کوچک‌تر است، پس شهر «ب» سردتر است."],
+["کدام عدد بین [-3] و [1] قرار دارد و منفی نیست؟",["[-2]","[-1]","[1]","[0]"],3,"عددهای بین آن دو: [-2]، [-1] و [0]. از این‌ها فقط [0] منفی نیست."]]],
+["➕","جمع و تفریق با محور","#3ddc84",[
+`<h3>➕ جمع روی محور</h3><p>از عدد اول شروع کن. جمع‌کردن عدد مثبت = قدم به <b>راست</b>، جمع‌کردن عدد منفی = قدم به <b>چپ</b>.</p>${nl(-4,4)}<p>[-3] + [5]: از [-3] پنج قدم به راست؛ می‌رسیم به [2].</p>`,
+`<h3>🌡️ مسئله‌های دما و آسانسور</h3><p>اگر هوا ۲ درجه باشد و ۷ درجه سردتر شود: ۲ − ۷ = [-5]. آسانسور از طبقه‌ی [-2] (زیرزمین) ۵ طبقه بالا برود: [-2] + ۵ = ۳.</p><p>اگر دو منفی را جمع کنیم، سردتر هم می‌شویم: [-3] + [-4] = [-7].</p><p class=fact>🏔️ می‌دانستی؟ قله‌ی اورست حدود ۸۸۴۹ متر بالای سطح دریاست؛ و ترانشه‌ی ماریانا حدود ۱۱ کیلومتر زیر آن. اختلافشان بیش از ۱۹ کیلومتر است!</p>`],
+[["[-3] + [5] = ?",["[2]","[8]","[-2]","[-8]"],0,"از [-3] پنج قدم به راست می‌رویم و به [2] می‌رسیم."],
+["[4] + [-6] = ?",["[2]","[-2]","[10]","[-10]"],1,"از [4] شش قدم به چپ؛ می‌رسیم به [-2]."],
+["دمای هوا ۲ درجه است و ۷ درجه کاهش می‌یابد. دمای جدید چند است؟",["[5]","[9]","[-9]","[-5]"],3,"۲ − ۷ = [-5]؛ پنج درجه زیر صفر."],
+["آسانسور در طبقه‌ی [-2] (زیرزمین) است و ۵ طبقه بالا می‌رود. به کدام طبقه می‌رسد؟",["[3]","[-3]","[7]","[-7]"],0,"[-2] + ۵ = ۳؛ یعنی طبقه‌ی سوم."],
+["«حاصل [-3] + [-4] برابر [-7] است.»",["صحیح","غلط"],0,"دو منفی را که جمع کنیم، منفیِ بزرگ‌تر می‌شود؛ ۳ + ۴ = ۷ و علامت منفی می‌ماند."]]]];
+const OKM=["آفرین!","آفرین پسر!","عالی بود!","احسنت!","دمت گرم قهرمان!","بارک‌الله!","فوق‌العاده‌ای!","چه سریع!"];
+/* ---------- helpers ---------- */
+function fmt(s){if(s[0]==='§'){const t=s.slice(1).replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\[(-?\d+)\]/g,(m,x)=>num(x));return `<bdi dir="ltr">${t}</bdi>`}
+ return s.replace(/\[(-?\d+)\]/g,(m,x)=>`<bdi dir="ltr">${num(x)}</bdi>`)}
+function h(s){let a=0xdeadbeef,b=0x41c6ce57;for(let i=0;i<s.length;i++){const c=s.charCodeAt(i);a=Math.imul(a^c,2654435761);b=Math.imul(b^c,1597334677)}a=Math.imul(a^(a>>>16),2246822507)^Math.imul(b^(b>>>13),3266489909);b=Math.imul(b^(b>>>16),2246822507)^Math.imul(a^(a>>>13),3266489909);return(4294967296*(2097151&b)+(a>>>0)).toString(36)}
+let mem=null;const store={get(k){try{return localStorage.getItem(k)}catch(e){return k==='i6_s'?mem:null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){if(k==='i6_s')mem=v}}};
+let S=null,muted=store.get('i6_m')==='1',tk=null,lock=false;
+/* deadline: signed link ?end=ms&k=sig, else embedded default */
+function endFromUrl(){try{const q=new URLSearchParams(location.search),e=q.get('end'),k=q.get('k');if(e&&k&&k===h('end'+e+SECRET))return+e}catch(x){}return null}
+let END=endFromUrl()||DL0;
+const mac=o=>h(JSON.stringify({...o,mac:0})+SECRET);
+function load(){try{const r=JSON.parse(store.get('i6_s')||'null');if(!r)return null;if(r.mac!==mac(r)){r.tamper=1;r.st.forEach(s=>{if(s.s!=='done')s.s='locked'});r.cur=null;r.act=null}return r}catch(e){return null}}
+function save(){S.mac=0;S.mac=mac(S);store.set('i6_s',JSON.stringify(S))}
+const now=()=>{const n=Math.max(Date.now(),S&&S.seen||0);if(S)S.seen=n;return n};
+const closed=()=>now()>=END;
+const total=()=>S.st.reduce((a,s)=>a+s.sc,0);
+const allDone=()=>S.st.every(s=>s.s!=='open');
+(function(){const s=$('#sn');for(let i=0;i<34;i++){const b=document.createElement('b');b.textContent=i%4?'❄':'•';b.style.left=Math.random()*100+'%';b.style.fontSize=(10+Math.random()*18)+'px';b.style.animationDuration=(7+Math.random()*9)+'s';b.style.animationDelay=(-Math.random()*12)+'s';s.appendChild(b)}})();
+/* ---------- voice only (no beeps/music) ---------- */
+function say(t){if(muted||!window.speechSynthesis)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='fa-IR';u.pitch=.55;u.rate=.95;u.volume=1;const v=speechSynthesis.getVoices().find(v=>/^fa/i.test(v.lang));if(v)u.voice=v;speechSynthesis.speak(u)}catch(e){}}
+function pop(t){const e=document.createElement('div');e.className='say';e.textContent=t;document.body.appendChild(e);setTimeout(()=>e.remove(),1700)}
+function mute(){muted=!muted;store.set('i6_m',muted?'1':'0');if(muted&&window.speechSynthesis)speechSynthesis.cancel();hudr()}
+function hudr(){const e=$('#hb');if(e)e.innerHTML=`<button class=ib onclick="mute()" title="صدای گوینده">${muted?'🔇':'🗣️'}</button>`}
+function boom(n){for(let i=0;i<(n||16);i++){const e=document.createElement('span');e.className='cf';e.textContent=['⭐','🎉','🔥','❄️','🏆','🎈','✨'][i%7];e.style.left=(6+Math.random()*88)+'vw';e.style.animationDelay=Math.random()*.4+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),2300)}}
+/* ---------- camera + code stamp ---------- */
+let stream=null,rec=null,chunks=[],vsaved=false,camErr='',cv=null,cx=null,vid=null,dt=null;
+function vcode(){return S?h(JSON.stringify(S.st.map(x=>x.L))+S.n+S.t+SECRET).slice(0,6):'------'}
+function stamp(){if(!cx||!vid)return;try{cx.drawImage(vid,0,0,320,240)}catch(e){}
+ const lab=S&&S.cur?'S'+(S.cur.s+1)+'-Q'+(S.st[S.cur.s].qi+1):'END',tm=new Date().toLocaleTimeString('en-GB'),t='ID:'+vcode()+'  '+lab+'  '+tm;
+ cx.fillStyle='rgba(0,0,0,.65)';cx.fillRect(0,0,320,20);cx.fillRect(0,220,320,20);cx.fillStyle='#fff';cx.font='bold 13px monospace';cx.textAlign='left';cx.fillText(t,6,14);cx.fillText(t,6,234);
+ cx.save();cx.globalAlpha=.28;cx.translate(160,125);cx.rotate(-.35);cx.textAlign='center';cx.font='bold 30px monospace';cx.fillText(vcode(),0,0);cx.restore()}
+function mkCanvasStream(){cv=document.createElement('canvas');cv.width=320;cv.height=240;cx=cv.getContext('2d');vid=document.createElement('video');vid.muted=true;vid.playsInline=true;vid.srcObject=stream;vid.play().catch(()=>{});clearInterval(dt);dt=setInterval(stamp,100);return cv.captureStream(10)}
+function camMsg(e){const n=e&&e.name||'';let inif=false;try{inif=window.top!==window.self}catch(x){inif=true}
+ if(location.protocol==='content:'||location.protocol==='file:'&&/Android/i.test(navigator.userAgent))return 'فایل مستقیم از حافظه‌ی گوشی باز شده و مرورگر برای چنین آدرسی دوربین را اجازه نمی‌دهد. بازی باید از لینک اینترنتی (https) باز شود؛ لینک را از معلم بگیر.';
+ if(!window.isSecureContext&&location.protocol!=='file:')return 'این صفحه از راه امن (https) باز نشده است. لینک اینترنتی را از معلم بگیر.';
+ if(inif)return 'این صفحه داخل یک پنجره‌ی پیش‌نمایش باز شده و آنجا دوربین مجاز نیست. لینک را مستقیم در Chrome باز کن.';
+ if(!navigator.mediaDevices)return 'این مرورگر دوربین را پشتیبانی نمی‌کند. لینک را در Chrome یا Safari باز کن.';
+ if(!window.MediaRecorder)return 'این مرورگر قابلیت فیلم‌برداری ندارد. Chrome یا نسخه‌ی جدید Safari را امتحان کن.';
+ if(n==='NotAllowedError'||n==='SecurityError')return 'اجازه‌ی دوربین داده نشد. روی آیکن کنار آدرس بزن، دوربین را «اجازه» بده و دوباره امتحان کن.';
+ if(n==='NotFoundError'||n==='OverconstrainedError')return 'دوربینی روی این دستگاه پیدا نشد.';
+ if(n==='NotReadableError')return 'دوربین دست یک برنامه‌ی دیگر است. آن را ببند و دوباره امتحان کن.';
+ return 'دوربین فعال نشد ('+(n||'خطای نامشخص')+'). لینک را در Chrome باز کن و دوباره امتحان کن.'}
+function showErr(m){let e=$('#cerr');if(!e){e=document.createElement('div');e.id='cerr';e.className='why';e.style.background='#ffe3ea';e.style.color='#7a0f33';const c=document.querySelector('.card');(c||document.body).appendChild(e)}e.textContent='📷 '+m;e.scrollIntoView({behavior:'smooth',block:'center'})}
+async function startCam(){if(!CAM)return true;camErr='';
+ try{if(!navigator.mediaDevices||!window.MediaRecorder)throw{name:'Unsupported'};
+  stream=await Promise.race([navigator.mediaDevices.getUserMedia({video:{width:{ideal:320},height:{ideal:240},facingMode:'user'},audio:false}),new Promise((_,j)=>setTimeout(()=>j({name:'NotAllowedError'}),20000))]);
+  const mt=['video/webm;codecs=vp8','video/webm','video/mp4'].find(t=>MediaRecorder.isTypeSupported(t));
+  rec=new MediaRecorder(mkCanvasStream(),{...(mt?{mimeType:mt}:{}),videoBitsPerSecond:150000});chunks=[];vsaved=false;
+  rec.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};rec.start(5000);
+  let c=$('#cam');if(!c){c=document.createElement('div');c.id='cam';c.innerHTML='<video id=pv autoplay muted playsinline></video><span>● REC</span>';document.body.appendChild(c)}
+  const v=$('#pv');v.srcObject=stream;v.play().catch(()=>{});
+  stream.getVideoTracks()[0].onended=()=>{if(!stream)return;stream=null;if(S){S.cg=(S.cg||0)+1;S.cgc=1;save();route()}};
+  return true}catch(e){stream=null;rec=null;camErr=camMsg(e);return false}}
+function finishCam(){if(!stream)return;const st=stream;stream=null;stamp();setTimeout(()=>{try{if(rec&&rec.state!=='inactive')rec.stop()}catch(e){}clearInterval(dt);st.getTracks().forEach(t=>{t.onended=null;t.stop()})},600);const c=$('#cam');if(c)c.remove()}
+function dlVideo(){if(!chunks.length)return alert('فیلمی برای ذخیره وجود ندارد (احتمالاً صفحه بسته یا دوباره باز شده بود).');
+ const type=(rec&&rec.mimeType)||'video/webm',bl=new Blob(chunks,{type}),a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download='film-'+vcode()+(type.includes('mp4')?'.mp4':'.webm');document.body.appendChild(a);a.click();a.remove();vsaved=true;setTimeout(()=>URL.revokeObjectURL(a.href),8000)}
+function camGate(){body(`<div class=card><div class=mas>📷</div><h2>دوربین باید روشن باشد</h2><div class=bub>دوربین قطع شده یا صفحه دوباره باز شده است. برای ادامه‌ی بازی، دوربین را فعال کن.</div><button class="go pulse" onclick="camOn()">📷 فعال‌کردن دوربین</button></div>`)}
+async function camOn(){const b=document.querySelector('.go');if(b)b.textContent='⏳ منتظر اجازه‌ی دوربین...';if(await startCam()){if(!S.cgc)S.cg=(S.cg||0)+1;S.cgc=0;save();route()}else{if(b)b.textContent='📷 فعال‌کردن دوربین';showErr(camErr)}}
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&S&&S.cur){S.tab=(S.tab||0)+1;save()}});
+addEventListener('beforeunload',e=>{if(S&&S.st&&CAM&&((!allDone())||(chunks.length&&!vsaved))){e.preventDefault();e.returnValue=''}});
+/* no going back */
+history.pushState(null,'',location.href);addEventListener('popstate',()=>{history.pushState(null,'',location.href)});
+/* ---------- views ---------- */
+const app=()=>$('#app');
+function cdText(){const l=END-Date.now(),p=n=>String(n).padStart(2,'0'),s=Math.max(0,Math.floor(l/1000));return l>0?fa(p(Math.floor(s/3600))+':'+p(Math.floor(s/60)%60)+':'+p(s%60)):'پایان'}
+function hud(){const sc=S&&S.st?total():0;return `<div class=hud><span class="pill cdp" id=cd>⏳ ${cdText()}</span><span class=pill>${S&&S.st?'⭐ <bdi dir=ltr>'+fa(sc)+' / ۲۰</bdi>':'🌡️ ریاضی ششم'}</span><span id=hb></span></div>${S&&S.st?`<div class=thermo><i style="width:${Math.round(sc/20*100)}%"></i><em>🌡️ دمای قهرمانی: <bdi>${fa(sc)}</bdi> از ۲۰</em></div>`:''}`}
+function body(html,dock){document.body.classList.toggle('pad',!!dock);app().innerHTML=hud()+html+(dock?dockHtml():'');hudr()}
+function dockHtml(){const f=allDone();return `<div class=dock><button class=go ${f?'':'disabled'} onclick="dlVideo()">📹 ذخیره فیلم</button><button class="go cp" ${f?'':'disabled'} onclick="copyCode(this)">📋 کپی کد</button></div>`}
+function gate(){if(closed()){body(`<div class=card><div class=mas>⌛</div><h2>زمان بازی تمام شد</h2><p>سؤال‌ها دیگر باز نمی‌شوند.</p></div>`);return}
+ body(`<div class=card><div class=mas>🧑‍🚀</div><h1 onclick="logo()">ماموریت یخ و آتش</h1><div class=bub>سلام قهرمان! من کاپیتان دماسنج هستم 🌡️ با هم ۴ ایستگاه از عددهای صحیح را فتح می‌کنیم؛ از آتش 🔥 تا یخ ❄️!</div><p>اسم و فامیلت را بنویس. <b>بعد از شروع قابل تغییر نیست!</b></p><input id=nm maxlength=40 placeholder="نام و نام خانوادگی"><label class=cons><input type=checkbox id=cs>📷 قبول دارم که در حین بازی دوربین روشن باشد و از من فیلم گرفته شود تا معلوم شود تقلب نمی‌کنم. فیلم فقط روی همین دستگاه ذخیره می‌شود و خودم برای معلم می‌فرستم.</label><button class="go pulse" onclick="start()">شروع ماموریت! 🚀</button><div class=chips><span>🌡️ ۴ ایستگاه</span><span>❓ ۲۰ سؤال</span><span>⏱ ۱ دقیقه برای هر سؤال</span><span>❤️ ۳ جان در هر ایستگاه</span><span>⭐ هر سؤال ۱ نمره</span><span>📷 دوربین روشن</span><span>🔒 بدون بازگشت به عقب</span></div></div>`)}
+let lg=0;function logo(){if(++lg>=5){lg=0;gotoT()}}
+function gotoT(){location.hash='#teacher';route()}
+async function start(){const n=$('#nm').value.trim().replace(/\s+/g,' ');if(n.length<3)return alert('نام و نام خانوادگی را کامل بنویس');
+ if(CAM){if(!$('#cs').checked)return alert('برای شروع باید اجازه‌ی فیلم‌برداری را تأیید کنی');const gb=document.querySelector('.go');if(gb)gb.textContent='⏳ منتظر اجازه‌ی دوربین...';if(!(await startCam())){if(gb)gb.textContent='شروع ماموریت! 🚀';return showErr(camErr)}}
+ S={n,t:Date.now(),st:T.map(()=>({s:'open',qi:0,lv:LIVES,sc:0,L:[]})),cur:null,act:null,seen:0,dl:END,streak:0};save();say('بزن بریم');map()}
+function map(){clearInterval(tk);const over=allDone();if(over)finishCam();const sc=total(),dn=S.st.filter(s=>s.s==='done').length,
+ mood=over?(sc>=18?'🏆':sc>=14?'🤩':sc>=10?'😎':'💪'):'🧑‍🚀',medal=sc>=18?'🥇':sc>=14?'🥈':sc>=10?'🥉':'🎖️',
+ msg=over?(sc>=18?'تو یک نابغه‌ی ریاضی هستی!':sc>=14?'خیلی عالی بود!':sc>=10?'آفرین، کم‌کم داری قوی می‌شی!':'ماموریت تمام شد؛ بیشتر تمرین کن تا قوی‌تر بشی!'):'یک ایستگاه انتخاب کن. بعد از ورود، راه بازگشت نیست!';
+ const cert=over?`<div class=cert><div class=medal>${medal}</div><b>${S.n}</b><div class=sm>نمره‌ی نهایی: ${fa(sc)} از ۲۰ — کد فیلم: <bdi dir=ltr>${vcode()}</bdi></div></div><p class=sm>حالا فیلم را ذخیره و کد را کپی کن و برای معلم بفرست.</p>`:'';
+ body(`<div class=card><div class=mas>${mood}</div><h2>${S.n}</h2><div class=bub>${msg}</div>${cert}<div class=stages>${T.map((t,i)=>{const s=S.st[i],blocked=s.s==='open'&&S.act!=null&&S.act!==i,st=s.s==='done'?'✅ تمام شد':s.s==='locked'?'🔒 قفل شد':s.qi?`ادامه (${fa(s.qi)}/۵)`:'ورود به ایستگاه';return `<button class="pl ${s.s}" style="--c:${t[2]}" ${s.s!=='open'||blocked||closed()?'disabled':''} onclick="enter(${i})"><span class=em>${t[0]}</span><span class=tx><b>ایستگاه ${fa(i+1)}</b><small>${t[1]}</small><i>${st} ${'❤️'.repeat(s.lv)}</i></span></button>`}).join('')}</div>${S.tamper?'<p class=bad>⚠️ اطلاعات ذخیره‌شده دستکاری شده بود.</p>':''}${over?'':'<p class=sm>هر ایستگاه بعد از تمام‌شدن برای همیشه بسته می‌شود.</p>'}</div>`,true);
+ if(over&&dn)boom(14)}
+function enter(i){if(closed()||S.st[i].s!=='open')return;S.act=i;save();S.st[i].qi===0?lesson(i,0):begin(i)}
+function lesson(i,p){clearInterval(tk);const t=T[i],n=t[3].length;
+ body(`<div class=card style="--c:${t[2]}"><div class=mas>${t[0]}</div><h2>درس‌نامه: ${t[1]}</h2><div class=pgs>${t[3].map((_,k)=>`<u class="${k===p?'on':''}"></u>`).join('')}</div><div class=lesson style="--c:${t[2]}">${fmt(t[3][p])}</div><div class=sm>تا شروع سؤال‌ها فقط بین صفحه‌های درس می‌توانی جابه‌جا شوی.</div>${p?`<button class=sec onclick="lesson(${i},${p-1})">→ صفحه‌ی قبل</button>`:''}${p<n-1?`<button class="go pulse" onclick="lesson(${i},${p+1})">صفحه‌ی بعد ←</button>`:`<button class="go pulse" onclick="begin(${i})">شروع سؤال‌ها 🚀</button>`}</div>`)}
+function begin(i){S.act=i;S.cur={s:i,t0:now()};save();quiz()}
+function quiz(){clearInterval(tk);const{s:i}=S.cur,st=S.st[i],q=T[i][4][st.qi],tf=q[1].length===2;lock=false;
+ const dots=[0,1,2,3,4].map(k=>`<u class="${k<st.qi?'on':k===st.qi?'cur':''}"></u>`).join('');
+ body(`<div class=card style="--c:${T[i][2]}"><div class=qt><span>${T[i][0]} ${T[i][1]}</span><span class=hearts id=hr>${'❤️'.repeat(st.lv)}${'🖤'.repeat(LIVES-st.lv)}</span></div><div class=bar><i id=br></i></div><div class=dots>${dots}</div><div>سؤال ${fa(st.qi+1)} از ۵<span class=tm id=tm></span></div><h2 class=q>${fmt(q[0])}</h2><div class="ops${tf?' tf':''}">${q[1].map((o,k)=>`<button class="op o${k}" data-s="${'ABCD'[k]}" onclick="ans(${k})">${tf?(k?'❌ ':'✅ '):''}${fmt(o)}</button>`).join('')}</div><div id=fb></div></div>`);
+ tk=setInterval(()=>{const r=TL*1000-(now()-S.cur.t0);if(!$('#br'))return;$('#br').style.width=Math.max(0,r/(TL*10))+'%';const sec=Math.max(0,Math.ceil(r/1000)),tm=$('#tm');tm.textContent='⏱ '+fa(sec);tm.className='tm'+(sec<=10?' hot':'');if(r<=0)fin(-1)},200)}
+function ans(k){if(!lock)fin(k)}
+function fin(k){if(lock)return;lock=true;clearInterval(tk);const i=S.cur.s,st=S.st[i],q=T[i][4][st.qi],ms=Math.min(TL*1000,now()-S.cur.t0),ok=k===q[2];
+ st.L.push([i*5+st.qi,k,ms]);let msg,kind;
+ if(ok){st.sc++;S.streak=(S.streak||0)+1;kind='ok';const w=pick(OKM);msg=w+' +۱ نمره'+(S.streak>=3?` — 🔥 ${fa(S.streak)} جواب درست پشت‌سرهم!`:'');say(w);pop(w);boom()}
+ else{st.lv--;S.streak=0;kind='bad';say('اشکال نداره، بیشتر تلاش کن');msg=(k<0?'⌛ وقت تمام شد! یک جان از دست رفت. ':'💪 اشکال نداره، بیشتر تلاش کن! ')+'جواب درست: '+fmt(q[1][q[2]]);const hr=$('#hr');if(hr)hr.classList.add('hit')}
+ st.qi++;if(st.lv<=0){st.s='locked';msg+=' — جان‌هایت تمام شد و این ایستگاه برای همیشه بسته شد.'}else if(st.qi>=NQ){st.s='done';msg+=' 🏁 ایستگاه تمام شد و بسته شد!';if(ok){say('ایستگاه تموم شد، آفرین');boom(26)}}
+ if(st.s!=='open')S.act=null;S.cur=null;save();
+ const ops=document.querySelectorAll('.op');if(ops[k]&&!ok)ops[k].classList.add('wrong');if(ops[q[2]])ops[q[2]].classList.add('right');
+ const f=$('#fb');f.className=kind;f.innerHTML=msg.includes('<')?msg:msg;f.insertAdjacentHTML('beforeend',`<div class=why>💡 یادگیری: ${fmt(q[3])}</div><button class="go pulse" onclick="nxt(${i})">ادامه ←</button>`)}
+function nxt(i){const st=S.st[i];if(st.s==='open'){S.cur={s:i,t0:now()};save();quiz()}else map()}
+/* ---------- result code ---------- */
+const enc=s=>new TextEncoder().encode(s),b64=u=>btoa(String.fromCharCode(...u)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''),ub64=s=>Uint8Array.from(atob(s.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));
+async function key(){return crypto.subtle.importKey('raw',await crypto.subtle.digest('SHA-256',enc(SECRET)),'AES-GCM',false,['encrypt','decrypt'])}
+async function sha(s){const b=await crypto.subtle.digest('SHA-256',enc(s));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+async function mk(){const L=S.st.map(s=>s.L),p={n:S.n,s:S.t,t:Date.now(),k:S.tamper?1:0,v:S.tab||0,g:S.cg||0,L};p.c=h(JSON.stringify(L)+S.n+S.t+(S.tab||0)+'|'+(S.cg||0)+SECRET);const iv=crypto.getRandomValues(new Uint8Array(12)),ct=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv},await key(),enc(JSON.stringify(p))));const o=new Uint8Array(12+ct.length);o.set(iv);o.set(ct,12);return 'MP7.'+b64(o)}
+async function rd(c){c=c.trim();if(!c.startsWith('MP7.'))throw 0;const o=ub64(c.slice(4));return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:o.slice(0,12)},await key(),o.slice(12))))}
+function sim(L){let sc=0,lv=LIVES,s='open',n=0;for(const[g,k,ms]of L){const ok=k===T[Math.floor(g/5)][4][g%5][2];if(ok)sc++;else lv--;n++;if(lv<=0)s='locked'}if(s==='open'&&n>=NQ)s='done';return{s,sc}}
+async function copyCode(btn){let c='';try{c=await mk()}catch(e){c='این مرورگر از رمزگذاری پشتیبانی نمی‌کند.'}
+ let ok=false;try{await navigator.clipboard.writeText(c);ok=true}catch(e){}
+ if(ok){const o=btn.textContent;btn.textContent='کپی شد ✅';setTimeout(()=>btn.textContent=o,2200)}
+ else{const m=document.createElement('div');m.className='modal';m.innerHTML=`<div class=card><h2>کد نتیجه</h2><p class=sm>کد را نگه دار و «Copy» را بزن، بعد برای معلم بفرست.</p><textarea id=cc readonly rows=6>${c}</textarea><button class=sec onclick="this.closest('.modal').remove()">بستن</button></div>`;document.body.appendChild(m);const t=m.querySelector('#cc');t.focus();t.select();try{document.execCommand('copy')}catch(e){}}}
+/* ---------- teacher ---------- */
+function tdata(){try{return JSON.parse(store.get('i6_t')||'[]')}catch(e){return[]}}
+function tView(){document.body.classList.remove('pad');const sh=$('#ex');if(sh)sh.innerHTML=''}
+async function teacher(){clearInterval(tk);tView();
+ if(!window.tok){app().innerHTML=`<div class=th>👩‍🏫 پنل معلم</div><div class=card><div class=mas>🔐</div><h2>ورود معلم</h2><input id=pw type=password placeholder="رمز" onkeydown="if(event.key==='Enter')chk()"><button class="go pulse" onclick="chk()">ورود</button><button class=sec onclick="location.hash='';route()">بازگشت</button></div>`;return}
+ const d=tdata().sort((a,b)=>b.sc-a.sc),n=d.length,sm=d.reduce((a,r)=>a+r.sc,0),mx=d.reduce((a,r)=>Math.max(a,r.sc),0),sus=d.filter(r=>!r.ok||r.v||r.g).length,md=['🥇','🥈','🥉'];
+ const qs=[];for(let g=0;g<20;g++){let a=0,c=0;d.forEach(r=>{(r.L||[]).forEach(l=>{if(l[0]===g){a++;if(l[1]===T[Math.floor(g/5)][4][g%5][2])c++}})});qs.push({a,c,p:a?Math.round(c/a*100):null})}
+ const hard=qs.map((q,i)=>({i,p:q.p})).filter(x=>x.p!==null).sort((a,b)=>a.p-b.p).slice(0,3);
+ app().innerHTML=`<div class=th>👩‍🏫 پنل معلم — ماموریت یخ و آتش</div><div class=card style="--c:#46d1ff"><div class=stats><div><b>${fa(n)}</b>دانش‌آموز</div><div><b>${fa(n?Math.round(sm/n*10)/10:0)}</b>میانگین</div><div><b>${fa(mx)}</b>بالاترین</div><div><b>${fa(sus)}</b>مشکوک</div></div>
+ <div class=box><h3>🔗 ساخت لینک بازی با زمان ۲۴ ساعته</h3><p class=sm>این لینک از همین لحظه ۲۴ ساعت اعتبار دارد. همین را برای بچه‌ها بفرست.</p><button class=go onclick="mkLink(24)">ساخت و کپی لینک ۲۴ ساعته</button><textarea id=lk rows=2 readonly placeholder="لینک اینجا می‌آید"></textarea></div>
+ <div class=box><h3>📥 ثبت نتیجه‌ی بچه‌ها</h3><textarea id=pc rows=4 placeholder="کد نتیجه‌ها را اینجا بچسبان (هر کد در یک خط)"></textarea><button class=go onclick="add()">🔍 بررسی و ثبت کدها</button><div id=tr class=sm></div></div>
+ <div class=box><h3>🏆 رتبه‌بندی</h3>${d.length?d.map((r,i)=>`<div class=lb style="--c:${r.ok&&!r.v&&!r.g?'#3ddc84':'#ff4f6d'}"><span>${md[i]||fa(i+1)}</span><span class=nm>${r.n.replace(/</g,'&lt;')}<small>${r.st.map(x=>x==='done'?'✅':x==='locked'?'🔒':'…').join(' ')} · 📱 ${fa(r.v||0)} · 📷 ${fa(r.g||0)} · کد فیلم <bdi dir=ltr>${r.vc||''}</bdi>${r.ok?'':' · ⚠️ '+r.w}</small></span><span class=sc>${fa(r.sc)}</span><span class=mini>${(()=>{const m={};(r.L||[]).forEach(l=>m[l[0]]=l[1]===T[Math.floor(l[0]/5)][4][l[0]%5][2]);return Array.from({length:20},(_,g)=>`<u class="${m[g]===true?'ok':m[g]===false?'no':''}"></u>`).join('')})()}</span></div>`).join(''):'<p class=sm>هنوز نتیجه‌ای ثبت نشده است.</p>'}</div>
+ <div class=box><h3>📊 تحلیل سؤال‌ها</h3>${n?qs.map((q,i)=>`<div class=qb><span>Q${i+1}</span><i style="width:${q.p===null?0:q.p*.8}%"></i><b>${q.p===null?'-':q.p+'%'}</b></div>`).join(''):'<p class=sm>بعد از ثبت نتیجه‌ها نمایش داده می‌شود.</p>'}${hard.length?`<p class=sm>⚠️ سخت‌ترین سؤال‌ها: ${hard.map(x=>'سؤال '+fa(x.i+1)+' ('+fa(x.p)+'٪)').join('، ')}</p>`:''}</div>
+ <button class=go onclick="exh()">📄 خروجی HTML</button><button class=sec onclick="cp()">کپی جدول</button><button class=sec onclick="rst()">🔄 شروع دوباره‌ی بازی روی این دستگاه</button><button class=sec onclick="if(confirm('همه‌ی نتیجه‌ها پاک شود؟')){store.set('i6_t','[]');teacher()}">🗑️ پاک کردن نتیجه‌ها</button><button class=sec onclick="window.tok=0;location.hash='';route()">خروج</button></div>`}
+async function chk(){let ok=false;try{ok=(await sha($('#pw').value+SECRET))===TPH}catch(e){}if(ok){window.tok=1;teacher()}else{alert('رمز درست نیست');$('#pw').value=''}}
+async function mkLink(hh){const e=Date.now()+hh*3600*1000,u=location.origin+location.pathname+'?end='+e+'&k='+h('end'+e+SECRET),t=$('#lk');t.value=u;t.select();try{await navigator.clipboard.writeText(u);alert('لینک کپی شد ✅\nاعتبار: تا '+new Date(e).toLocaleString('fa-IR'))}catch(x){document.execCommand&&document.execCommand('copy')}}
+async function add(){const ls=$('#pc').value.split(/\s+/).filter(Boolean),d=tdata();let bad=0;
+ for(const c of ls){try{const p=await rd(c),r=p.L.map(sim),w=[];if(p.c!==h(JSON.stringify(p.L)+p.n+p.s+(p.v||0)+'|'+(p.g||0)+SECRET))w.push('امضا');if(p.k)w.push('دستکاری');if(p.L.some(l=>l.length>5||l.some(e=>e[2]>TL*1000||e[2]<0)))w.push('زمان');
+  const o={n:p.n,k:p.n+p.s,st:r.map(x=>x.s),sc:r.reduce((a,x)=>a+x.sc,0),ok:!w.length,w:w.join('،'),t:p.t,v:p.v||0,g:p.g||0,vc:h(JSON.stringify(p.L)+p.n+p.s+SECRET).slice(0,6),L:[].concat(...p.L)},i=d.findIndex(x=>x.k===o.k);if(i<0)d.push(o);else if(d[i].t<=o.t)d[i]=o}catch(e){bad++}}
+ store.set('i6_t',JSON.stringify(d));await teacher();if(bad)$('#tr').textContent=fa(bad)+' کد نامعتبر بود.'}
+function cp(){const d=tdata();navigator.clipboard.writeText(d.map(r=>[r.n,...r.st,r.sc,r.v||0,r.g||0,r.vc||'',r.ok?'ok':r.w].join('\t')).join('\n'))}
+function rst(){if(!confirm('بازی و فیلم همین دستگاه پاک شود و از اول شروع شود؟ (نتیجه‌های ثبت‌شده در پنل معلم پاک نمی‌شود)'))return;finishCam();chunks=[];rec=null;mem=null;store.set('i6_s','null');S=null;window.tok=0;location.hash='';route()}
+function exh(){const d=tdata().sort((a,b)=>b.sc-a.sc);if(!d.length)return alert('هنوز نتیجه‌ای ثبت نشده است');const e=x=>String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;'),n=d.length,sm=d.reduce((a,r)=>a+r.sc,0),mx=d.reduce((a,r)=>Math.max(a,r.sc),0),md=['🥇','🥈','🥉'];
+ const rows=d.map((r,i)=>`<tr><td>${md[i]||fa(i+1)}</td><td>${e(r.n)}</td>${r.st.map(x=>`<td>${x==='done'?'✅':x==='locked'?'🔒':'…'}</td>`).join('')}<td><b>${fa(r.sc)}</b></td><td>${r.v?'⚠️ '+fa(r.v):'✔️'}</td><td>${r.g?'⚠️ '+fa(r.g):'✔️'}</td><td dir=ltr>${r.vc||''}</td><td>${r.ok?'✔️ معتبر':'⚠️ '+e(r.w)}</td></tr>`).join('');
+ const html=`<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>نتایج ماموریت یخ و آتش</title><style>body{font-family:Vazirmatn,Tahoma,sans-serif;margin:0;background:linear-gradient(180deg,#fff1e0,#e3f4ff);color:#16296b}header{background:linear-gradient(90deg,#ff4f6d,#ffb800,#46d1ff);padding:14px;text-align:center;font-weight:900}main{max-width:960px;margin:0 auto;padding:16px}h1{text-align:center}.s{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}.s div{background:#fff;border:3px solid #ff8a3d;border-radius:16px;padding:6px 18px;text-align:center}.s b{display:block;font-size:1.5rem;color:#2f5bea}.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff}th,td{border:1px solid #bcd;padding:6px 8px;text-align:center}th{background:#2f5bea;color:#fff}tr:nth-child(even) td{background:#f4f8ff}.sm{text-align:center;opacity:.7;font-size:.85rem}</style></head><body><header>🎨 طراح: اکبر اللهوردی 🎨</header><main><h1>🌡️ نتایج ماموریت یخ و آتش</h1><div class="s"><div><b>${fa(n)}</b>دانش‌آموز</div><div><b>${fa(Math.round(sm/n*10)/10)}</b>میانگین (از ۲۰)</div><div><b>${fa(mx)}</b>بالاترین نمره</div></div><div class="tw"><table><tr><th>رتبه</th><th>نام</th>${T.map(t=>`<th>${t[0]} ${t[1]}</th>`).join('')}<th>نمره از ۲۰</th><th>📱 خروج از صفحه</th><th>📷 قطع دوربین</th><th>🔑 کد فیلم</th><th>اعتبار</th></tr>${rows}</table></div><p class="sm">تاریخ تهیه: ${new Date().toLocaleString('fa-IR')}</p></main></body></html>`;
+ const bl=new Blob([html],{type:'text/html;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download='natayej-yakh-atash.html';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000)}
+/* ---------- routing ---------- */
+function route(){S=load();if(S&&S.dl)END=S.dl;if(location.hash==='#teacher'){$('#tbt').style.display='none';return teacher()}$('#tbt').style.display='';
+ if(!S||!S.st)return gate();
+ if(CAM&&!stream&&!allDone())return camGate();
+ if(S.act!=null&&S.st[S.act].s==='open'&&!closed()){const a=S.act;if(S.cur){const r=TL*1000-(now()-S.cur.t0);if(r<=0){S.cur.t0=now()-TL*1000-1;lock=false;quiz();return fin(-1)}return quiz()}return S.st[a].qi===0?lesson(a,0):begin(a)}
+ S.cur=null;S.act=null;map()}
+addEventListener('hashchange',route);
+setInterval(()=>{const e=$('#cd');if(!e)return;e.textContent='⏳ '+cdText();if(S&&S.st&&closed()&&!allDone()&&!S.cur&&!document.querySelector('.qt')&&location.hash!=='#teacher'){S.st.forEach(s=>{if(s.s==='open')s.s='locked'});S.act=null;save();map()}},1000);
+route();
+</script></body></html>
